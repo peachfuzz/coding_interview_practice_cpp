@@ -11,12 +11,12 @@ class Solution
   public:
     vector<int> partitionLabels(string S)
     {
-        int last[26] = {};
+        int last_pos_found[26] = {};
 
         // finding max position of each letter
         for (int i = 0; i < S.length(); ++i)
         {
-            last[S[i] - 'a'] = i;
+            last_pos_found[S[i] - 'a'] = i;
         }
 
         int j = 0, anchor = 0;
@@ -26,8 +26,7 @@ class Solution
 
         for (int i = 0; i < S.length(); ++i)
         {
-            j = j > last[S[i] - 'a'] ? j : last[S[i] - 'a'];
-            cout << j << endl;
+            j = j > last_pos_found[S[i] - 'a'] ? j : last_pos_found[S[i] - 'a'];
             if (i == j)
             {
                 // adding
@@ -36,7 +35,6 @@ class Solution
                 anchor = i + 1;
             }
         }
-
         return ans;
     }
 };
