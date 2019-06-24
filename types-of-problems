@@ -1,0 +1,12 @@
+1. Recursive - calls self
+ex: fibonacci sequence
+2. Dynamic programming - remembers past result and uses it for future
+ex: fibonacci sequence
+3. Backtracking - 
+ex: queens problem - nxn board, place n queens down so none are attacking each other
+4. Divide and conquer - divides problem into smaller sub problems and solves sub problems
+ex: quick sort, merge sort
+5. Greedy - finding optimal solution at the local level and hopefully finding global solution
+ex: counting money
+6. Brute Force - tries all possibilities until answer found
+ex: exact string matching 
