@@ -22,7 +22,7 @@ public:
         int single_place = 0;
         int next_place = 0;
 
-        while (num_one->val != NULL || num_two->val != NULL)
+        while (num_one != NULL || num_two != NULL)
         {
             single_place = num_one->val + num_one->val + next_place;
             next_place = 0;
@@ -35,18 +35,23 @@ public:
             {
                 my_answer->val = single_place;
             }
+            num_one = num_one->next;
+            num_two = num_two->next;
         }
 
-        if (num_one->val == NULL && num_two->val == NULL)
+        if (num_one == NULL && num_two == NULL)
         {
             return my_answer;
         }
         else if (num_one->val == NULL)
         {
+            my_answer->next = num_one;
         }
         else if (num_two->val == NULL) // not sure if I need this check, by deduction this is it
         {
+            my_answer->next = num_two;
         }
+        return my_answer;
     }
 };
 
